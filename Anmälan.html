@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <link href="style2.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="style2.css">
+        <title>Anmälan</title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="topnav">
+                <a class="" href="Home.html">Home</a>
+                <a href="CV.html">CV</a>
+                <a href="COVER.html">Cover letter</a>
+                <a href="Anmälan.html">Contact</a>
+                <a href="Abbe-HTML.html">Countdown</a>
+        </div>
+<div class="container">
+        <form  onsubmit="sendInfo(event)" id="Form1">
+
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name.." >
+
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                <label for ="subject" ></label> 
+                <input type  ="email" id="Email" name="Mail" placeholder="Your Mail.." required>
+
+                
+                </select>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+                <input type="submit" value="Submit">
+        </form>
+        <form id="form2">
+                <span style="color:green" id="lyckadMeddelande"> </span>
+        </form>
+        <script>
+function sendInfo(event) {
+        event.preventDefault();
+        console.log("Förnamn : "+ document.getElementById("fname").value);
+        console.log("Efternamn : "+ document.getElementById("lname").value);
+        console.log("Mejladress : "+ document.getElementById("Email").value);
+        console.log("Meddelande : "+ document.getElementById("subject").value);
+        
+        document.getElementById("Form1").style.display = "none";
+        document.getElementById("form2").style.display = "block";
+        document.getElementById("lyckadMeddelande").innerHTML="Hej "+ document.getElementById("fname").value+"!<br> Ditt meddelande har skickats";
+                
+        }
+</script>
+                        
